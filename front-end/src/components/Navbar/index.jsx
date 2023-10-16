@@ -65,7 +65,7 @@ export default function Navbar({ onClose }) {
             <Link href="/gallery-tasavir">گالری تصاویر</Link>
           </li>
           <li>
-            <Link href="/darbareh-man">درباره من</Link>
+            <Link href="/about">درباره من</Link>
           </li>
         </ul>
         <div className="flex items-center gap-4 ml-52">

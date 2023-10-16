@@ -1,28 +1,101 @@
+import React, { useState } from "react";
 import Link from "next/link";
+import Image from 'next/image';
 
 export default function Navbar({ onClose }) {
+  const [isCollapsed, setIsCollapsed] = useState(false);
+
+  const toggleMenu = () => {
+    setIsCollapsed(!isCollapsed);
+  };
+
+  if (isCollapsed) {
+    return (
+      <div dir="rtl" className="border-2 border-gray-300 h-full w-16 fixed top-0 right-0 flex flex-col items-center justify-between p-5">
+        <button onClick={toggleMenu}>
+          <Image
+            src={'/assets/images/menu.svg'}
+            width={20}
+            height={15}
+          />
+        </button>
+        <div className="flex flex-col items-center gap-4">
+          <Image
+            src={'/assets/images/instagram.svg'}
+            width={20}
+            height={15}
+          />
+          <Image
+            src={'/assets/images/group.svg'}
+            width={20}
+            height={15}
+          />
+          <Image
+            src={'/assets/images/Auto-added frame.svg'}
+            width={20}
+            height={15}
+          />
+          <Image
+            src={'/assets/images/whatsapp.svg'}
+            width={20}
+            height={15}
+          />
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div dir="rtl" className="border-2 border-gray-300 relative p-2  m-5 ">
-      <button onClick={onClose} className="absolute top-2 left-2">
+    <div dir="rtl" className="border-2 border-gray-300 fixed top-0 left-0 right-0 m-5 max-w-screen-xxl p-2 bg-secondary">
+      <button onClick={toggleMenu} className="absolute top-2 left-2">
         ×
       </button>
-      <ul className="flex justify-start gap-10 ">
-        <li className=" ">
-          <Link href="/mabahes">مباحث</Link>
-        </li>
-        <li className=" ">
-          <Link href="/podcast">پادکست</Link>
-        </li>
-        <li className=" ">
-          <Link href="/film">فیلم</Link>
-        </li>
-        <li className=" ">
-          <Link href="/gallery-tasavir">گالری تصاویر</Link>
-        </li>
-        <li className=" ">
-          <Link href="/darbareh-man">درباره من</Link>
-        </li>
-      </ul>
+      <div className="flex justify-between items-center ">
+        <ul className="flex justify-start gap-10">
+          <li>
+            <Link href="/mabahes">مباحث</Link>
+          </li>
+          <li>
+            <Link href="/podcast">پادکست</Link>
+          </li>
+          <li>
+            <Link href="/film">فیلم</Link>
+          </li>
+          <li>
+            <Link href="/gallery-tasavir">گالری تصاویر</Link>
+          </li>
+          <li>
+            <Link href="/darbareh-man">درباره من</Link>
+          </li>
+        </ul>
+        <div className="flex items-center gap-4 ml-52">
+          <Image
+            src={'/assets/images/instagram.svg'}
+            width={20}
+            height={15}
+            
+            
+          />
+          <Image
+            src={'/assets/images/group.svg'}
+            width={20}
+            height={15}
+            
+          />
+          <Image
+            src={'/assets/images/Auto-added frame.svg'}
+            width={20}
+            height={15}
+           
+          />
+          <Image
+            src={'/assets/images/whatsapp.svg'}
+            width={20}
+            height={15}
+            
+          />
+        </div>
+      </div>
     </div>
   );
 }

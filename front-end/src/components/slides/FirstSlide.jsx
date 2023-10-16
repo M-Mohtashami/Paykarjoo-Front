@@ -12,6 +12,7 @@ const FirstSlide = () => {
               src={'/assets/images/paykarjoo.png'}
               width={400}
               height={300}
+              
             />
             <h2 className="text-secondary text-center text-xl">
               عضو هیات علمی دانشگاه

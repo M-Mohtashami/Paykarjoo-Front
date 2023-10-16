@@ -6,3 +6,7 @@
     font-family: yekan;
     src: url('../../public/assets/fonts/YekanBakhFaNum-Regular.woff');
 }
+
+.whiteIcon {
+    filter: invert(100%);
+ }

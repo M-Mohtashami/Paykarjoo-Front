@@ -46,7 +46,10 @@ export default function Navbar({ onClose }) {
   }
 
   return (
-    <div dir="rtl" className="border-2 border-gray-300 fixed top-0 left-0 right-0 m-5 max-w-screen-xxl p-2 bg-secondary">
+    <div
+      dir="rtl"
+      className="border-2 border-gray-300 fixed top-0 left-0 right-0 m-5 max-w-screen-xxl p-2 bg-secondary z-50"
+    >
       <button onClick={toggleMenu} className="absolute top-2 left-2">
         ×
       </button>
@@ -69,31 +72,14 @@ export default function Navbar({ onClose }) {
           </li>
         </ul>
         <div className="flex items-center gap-4 ml-52">
-          <Image
-            src={'/assets/images/instagram.svg'}
-            width={20}
-            height={15}
-            
-            
-          />
-          <Image
-            src={'/assets/images/group.svg'}
-            width={20}
-            height={15}
-            
-          />
+          <Image src={'/assets/images/instagram.svg'} width={20} height={15} />
+          <Image src={'/assets/images/group.svg'} width={20} height={15} />
           <Image
             src={'/assets/images/Auto-added frame.svg'}
             width={20}
             height={15}
-           
           />
-          <Image
-            src={'/assets/images/whatsapp.svg'}
-            width={20}
-            height={15}
-            
-          />
+          <Image src={'/assets/images/whatsapp.svg'} width={20} height={15} />
         </div>
       </div>
     </div>

@@ -1,13 +1,13 @@
 import { Inter } from 'next/font/google';
 import MainLayout from '@/layout/MainLayout';
-import FirstSlide from '@/components/slides/FirstSlide';
+import Slider from '@/components/slides/slider';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (
     <main>
-      <FirstSlide />
+      <Slider />
     </main>
   );
 }

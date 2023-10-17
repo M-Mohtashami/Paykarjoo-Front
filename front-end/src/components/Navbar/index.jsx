@@ -62,7 +62,7 @@ export default function Navbar({ onClose }) {
             <Link href="/film">فیلم</Link>
           </li>
           <li>
-            <Link href="/gallery-tasavir">گالری تصاویر</Link>
+            <Link href="/gallery">گالری تصاویر</Link>
           </li>
           <li>
             <Link href="/about">درباره من</Link>

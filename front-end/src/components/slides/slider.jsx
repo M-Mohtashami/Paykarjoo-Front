@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useCallback } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import FirstSlide from '@/components/slides/FirstSlide';
@@ -9,6 +9,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 // import required modules
 import { Parallax, Pagination, Navigation } from 'swiper/modules';
+import Gallery from '@/pages/gallery';
 
 const slides = [
   {
@@ -39,30 +40,53 @@ const slides = [
 ];
 
 export default function Slider() {
+  const sliderRef = useRef(null);
+
+  const handlePrev = useCallback(() => {
+    if (!sliderRef.current) return;
+    sliderRef.current.swiper.slidePrev();
+  }, []);
+
+  const handleNext = useCallback(() => {
+    if (!sliderRef.current) return;
+    sliderRef.current.swiper.slideNext();
+  }, []);
+
   return (
     <>
       <Swiper
+        ref={sliderRef}
         style={{
           '--swiper-navigation-color': '#fff',
           '--swiper-pagination-color': '#fff',
         }}
         speed={600}
         parallax={true}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
+        // pagination={{
+        //   clickable: true,
+        // }}
+        // navigation={true}
+        allowTouchMove={false}
         modules={[Parallax, Pagination, Navigation]}
         className="mySwiper"
       >
         <SwiperSlide>
-          <FirstSlide />
+          <FirstSlide handleNext={handleNext} handlePrev={handlePrev} />
         </SwiperSlide>
         {slides.map((slide) => (
           <SwiperSlide>
-            <Slides img={slide.img} title={slide.title} desc={slide.desc} />
+            <Slides
+              img={slide.img}
+              title={slide.title}
+              desc={slide.desc}
+              handleNext={handleNext}
+              handlePrev={handlePrev}
+            />
           </SwiperSlide>
         ))}
+        {/* <SwiperSlide>
+          <Gallery />
+        </SwiperSlide> */}
       </Swiper>
     </>
   );

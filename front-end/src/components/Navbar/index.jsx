@@ -11,35 +11,22 @@ export default function Navbar({ onClose }) {
 
   if (isCollapsed) {
     return (
-      <div dir="rtl" className="border-2 border-gray-300 h-full w-16 fixed top-0 right-0 flex flex-col items-center justify-between p-5">
+      <div
+        dir="rtl"
+        className="z-50 border-2 border-gray-300 h-full w-16 fixed top-0 right-0 flex flex-col items-center justify-between p-5"
+      >
         <button onClick={toggleMenu}>
-          <Image
-            src={'/assets/images/menu.svg'}
-            width={20}
-            height={15}
-          />
+          <Image src={'/assets/images/menu.svg'} width={20} height={15} />
         </button>
         <div className="flex flex-col items-center gap-4">
-          <Image
-            src={'/assets/images/instagram.svg'}
-            width={20}
-            height={15}
-          />
-          <Image
-            src={'/assets/images/group.svg'}
-            width={20}
-            height={15}
-          />
+          <Image src={'/assets/images/instagram.svg'} width={20} height={15} />
+          <Image src={'/assets/images/group.svg'} width={20} height={15} />
           <Image
             src={'/assets/images/Auto-added frame.svg'}
             width={20}
             height={15}
           />
-          <Image
-            src={'/assets/images/whatsapp.svg'}
-            width={20}
-            height={15}
-          />
+          <Image src={'/assets/images/whatsapp.svg'} width={20} height={15} />
         </div>
       </div>
     );
@@ -48,7 +35,7 @@ export default function Navbar({ onClose }) {
   return (
     <div
       dir="rtl"
-      className="border-2 border-gray-300 fixed top-0 left-0 right-0 m-5 max-w-screen-xxl p-2 bg-secondary z-50"
+      className="z-50 border-2 border-gray-300 fixed top-0 left-0 right-0 m-5 max-w-screen-xxl p-2 bg-secondary"
     >
       <button onClick={toggleMenu} className="absolute top-2 left-2">
         ×

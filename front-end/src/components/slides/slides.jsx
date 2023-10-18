@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 import Button from '../shared/Button/index';
 
-const Slides = ({ img, title, desc }) => {
+const Slides = ({ img, title, desc, handleNext, handlePrev }) => {
   return (
     <div className="bg-secondary flex items-start justify-center h-screen">
       <div className="w-[85%] h-full flex flex-row-reverse items-start justify-start gap-5">
@@ -28,10 +28,12 @@ const Slides = ({ img, title, desc }) => {
           </div>
           <div className="flex items-center self-start gap-3 justify-self-end">
             <Button
+              onClick={handlePrev}
               icon={<BsArrowRight />}
               className="border-primary rounded-full border p-3 flex items-center justify-center text-primary text-lg hover:text-secondary hover:bg-primary"
             />
             <Button
+              onClick={handleNext}
               icon={<BsArrowLeft />}
               className="border-primary rounded-full border p-3 flex items-center justify-center text-primary text-lg hover:text-secondary hover:bg-primary"
             />

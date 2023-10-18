@@ -1006,7 +1006,7 @@ const articles = [
   },
 ];
 
-const FirstSlide = () => {
+const FirstSlide = ({ handleNext, handlePrev }) => {
   return (
     <div className="bg-secondary flex items-start justify-center h-screen">
       <div className="w-[85%] h-full flex items-start justify-start gap-5">
@@ -1039,10 +1039,12 @@ const FirstSlide = () => {
           </div>
           <div className="flex items-center self-end gap-3 justify-self-end">
             <Button
+              onClick={handlePrev}
               icon={<BsArrowRight />}
               className="border-primary rounded-full border p-3 flex items-center justify-center text-primary text-lg hover:text-secondary hover:bg-primary"
             />
             <Button
+              onClick={handleNext}
               icon={<BsArrowLeft />}
               className="border-primary rounded-full border p-3 flex items-center justify-center text-primary text-lg hover:text-secondary hover:bg-primary"
             />

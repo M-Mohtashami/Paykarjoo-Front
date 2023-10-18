@@ -4,7 +4,9 @@ import Navbar from '@/components/Navbar';
 const MainLayout = ({ children }) => {
   return (
     <div>
-      <Navbar />
+      <div className="z-50">
+        <Navbar />
+      </div>
       <div>{children}</div>
     </div>
   );

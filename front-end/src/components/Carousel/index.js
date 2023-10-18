@@ -5,10 +5,11 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import { EffectCoverflow, Pagination } from 'swiper/modules';
 import Image from 'next/image'; 
+import Mass from '../mass';
 
 export default function Carousel() {
   return (
-    <div className="h-full bg-secondary font-sans">
+<div className="h-full bg-secondary font-sans relative">
       <Swiper
         effect={'coverflow'}
         grabCursor={true}
@@ -38,6 +39,7 @@ export default function Carousel() {
          </SwiperSlide>
         ))}
       </Swiper>
+      <Mass className='absolute  z-10'/>
     </div>
   );
 }

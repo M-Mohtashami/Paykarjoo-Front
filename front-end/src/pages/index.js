@@ -3,12 +3,13 @@ import MainLayout from '@/layout/MainLayout';
 import Slider from '@/components/slides/slider';
 import MovieCard from '@/components/shared/MovieCard';
 import movie from '../../public/assets/images/paykarjoo.png';
+import AudioCard from '@/components/shared/AudioCard';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (
-    <main>
+    <main className="p-20 flex gap-20">
       {/* <Slider /> */}
       <MovieCard
         movie={{
@@ -16,6 +17,7 @@ export default function Home() {
           title: 'Lorem ipsum',
         }}
       />
+      <AudioCard />
     </main>
   );
 }

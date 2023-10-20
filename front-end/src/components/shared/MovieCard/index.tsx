@@ -4,7 +4,7 @@ import Image from 'next/image';
 const MovieCard = ({ movie }) => {
   return (
     <div className="max-w-sm overflow-hidden flex flex-col gap-3 text-txt_primary">
-      <div className="relative">
+      <div className="relative max-h-80 rounded-md overflow-hidden">
         <div>
           <Image src={movie.image} width={500} height={300} alt={movie.title} />
         </div>

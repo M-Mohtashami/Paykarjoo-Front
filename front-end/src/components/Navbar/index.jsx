@@ -13,7 +13,7 @@ export default function Navbar({ onClose }) {
     return (
       <div
         dir="rtl"
-        className="z-50 border-2 border-gray-300 h-full w-16 fixed top-0 right-0 flex flex-col items-center justify-between p-5"
+        className="z-50 border-2 border-[#5E5E67] h-full w-16 fixed top-0 right-0 flex flex-col items-center justify-between p-5 bg-secondary"
       >
         <button onClick={toggleMenu}>
           <Image src={'/assets/images/menu.svg'} width={20} height={15} />

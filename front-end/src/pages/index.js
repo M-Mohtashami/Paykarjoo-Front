@@ -13,11 +13,18 @@ export default function Home() {
       {/* <Slider /> */}
       <MovieCard
         movie={{
-          image: require('../../public/assets/images/paykarjoo.png'),
-          title: 'Lorem ipsum',
+          image: require('../../public/assets/images/videocover.png'),
+          title: 'لورم ایپسوم متن ساختگی با تولید سادگی',
+          desc: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است',
         }}
       />
-      <AudioCard />
+      <AudioCard
+        audio={{
+          duration: '11:45',
+          image: '/assets/images/image8.png',
+          title: 'اقتصاد جدید',
+        }}
+      />
     </main>
   );
 }

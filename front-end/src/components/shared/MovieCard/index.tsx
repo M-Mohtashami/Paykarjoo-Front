@@ -2,12 +2,12 @@ import React from 'react';
 import Image from 'next/image';
 import { CiPlay1 } from 'react-icons/ci';
 
-const MovieCard = ({ movie }) => {
+const MovieCard = ({ movie, width = 500, height = 400 }) => {
   return (
-    <div className="max-w-sm overflow-hidden flex flex-col gap-3 text-txt_primary cursor-pointer">
-      <div className="relative max-h-80 rounded-md overflow-hidden">
+    <div className="overflow-hidden flex flex-col gap-3 text-txt_primary cursor-pointer" style={{ maxWidth: width, maxHeight: height }}>
+      <div className="relative rounded-md overflow-hidden">
         <div>
-          <Image src={movie.image} width={500} height={300} alt={movie.title} />
+        <Image src={movie?.image} width={width} height={height} alt={movie?.title} />
         </div>
         <div className="text-primary absolute top-5 left-5 flex items-center gap-1 p-2 justify-between bg-secondary rounded-xl bg-opacity-90">
           <div>
@@ -75,8 +75,8 @@ const MovieCard = ({ movie }) => {
       </div>
       <div>
         <div className="flex flex-col items-start gap-3 pr-3">
-          <h2 className="text-md font-semibold">{movie.title}</h2>
-          <p className=" text-primary text-sm">{movie.desc}</p>
+          <h2 className="text-md font-semibold">{movie?.title}</h2>
+          <p className=" text-primary text-sm">{movie?.desc}</p>
         </div>
       </div>
     </div>

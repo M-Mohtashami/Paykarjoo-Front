@@ -58,7 +58,7 @@ export default function Navbar({ onClose }) {
             <Link href="/about">درباره من</Link>
           </li>
           <li>
-            <Link href="/about">صفحه نخست </Link>
+            <Link href="/">صفحه نخست </Link>
           </li>
         </ul>
         <div className="flex items-center gap-4 ml-52">

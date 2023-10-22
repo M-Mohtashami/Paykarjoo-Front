@@ -5,16 +5,16 @@ import { BsClock } from 'react-icons/bs';
 import Button from '../Button';
 import AudioProgress from '@/utils/AudioProgress';
 
-const AudioCard = ({ audio }) => {
+const AudioCard = ({ audio, width = 500, height = 400 }) => {
   // const [isPlaying, setIsPlaying] = useState(false);
   return (
-    <div className="max-w-sm max-h-56 p-3 border border-primary rounded-sm overflow-hidden flex flex-col items-center justify-between cursor-pointer">
+    <div style={{ maxWidth: `${width}px`, maxHeight: `${height}px` }}  className="max-w-sm max-h-56 p-3 border border-primary rounded-sm overflow-hidden flex flex-col items-center justify-between cursor-pointer">
       <div className="w-full overflow-hidden relative rounded-sm space-y-2">
         <Image
           src={audio.image}
           alt="alt"
-          width={500}
-          height={500}
+          width={width}
+          height={height}
           //   style={{ width: '100%', height: '100%' }}
         />
         <div className="flex items-start flex-col gap-2">

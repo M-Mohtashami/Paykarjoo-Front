@@ -13,7 +13,7 @@ export default function Navbar({ onClose }) {
     return (
       <div
         dir="rtl"
-        className="z-50 border-2 border-[#5E5E67] h-full w-16 fixed top-0 right-0 flex flex-col items-center justify-between p-5 bg-secondary"
+        className="z-50 border-2 border-[#5E5E67] h-full w-16 fixed top-0 right-0 flex flex-col items-center justify-between px-5 bg-secondary"
       >
         <button onClick={toggleMenu}>
           <Image src={'/assets/images/menu.svg'} width={20} height={15} />
@@ -35,7 +35,7 @@ export default function Navbar({ onClose }) {
   return (
     <div
       dir="rtl"
-      className="z-50 border-2 border-gray-300 fixed top-0 left-0 right-0 m-10 max-w-screen-xxl p-2 bg-secondary "
+      className="z-50 border-2 border-gray-300 fixed top-3 left-0 right-0 mx-10 max-w-screen-xxl p-2 bg-secondary "
     >
       <button onClick={toggleMenu} className="absolute top-2 left-2">
         ×

@@ -4,14 +4,15 @@ import Slider from '@/components/slides/slider';
 import MovieCard from '@/components/shared/MovieCard';
 import movie from '../../public/assets/images/paykarjoo.png';
 import AudioCard from '@/components/shared/AudioCard';
+import Movies from '@/components/slides/Movies';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (
-    <main className="p-20 flex gap-20">
-      {/* <Slider /> */}
-      <MovieCard
+    <main>
+      <Slider />
+      {/* <MovieCard
         movie={{
           image: require('../../public/assets/images/videocover.png'),
           title: 'لورم ایپسوم متن ساختگی با تولید سادگی',
@@ -24,7 +25,7 @@ export default function Home() {
           image: '/assets/images/image8.png',
           title: 'اقتصاد جدید',
         }}
-      />
+      /> */}
     </main>
   );
 }

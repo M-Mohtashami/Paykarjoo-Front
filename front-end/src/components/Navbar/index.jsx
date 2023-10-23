@@ -35,7 +35,7 @@ export default function Navbar({ onClose }) {
   return (
     <div
       dir="rtl"
-      className="z-50 border-2 border-gray-300 fixed top-0 left-0 right-0 m-10 max-w-screen-xxl p-2 bg-secondary"
+      className="z-50 border-2 border-gray-300 fixed top-0 left-0 right-0 m-10 max-w-screen-xxl p-2 bg-secondary "
     >
       <button onClick={toggleMenu} className="absolute top-2 left-2">
         ×

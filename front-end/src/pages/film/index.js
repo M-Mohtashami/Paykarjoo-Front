@@ -2,51 +2,73 @@ import React from 'react'
 import MovieCard from '@/components/shared/MovieCard';
 
 
-const movie = {
-          image: require('../../..//public/assets/images/videocover.png'),
-          title: 'لورم ایپسوم متن ساختگی با تولید سادگی',
-          desc: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است',
-        }
-     
+const movies = [
+  {
+    src: '/assets/images/videocover.png',
+    title: 'لورم ایپسوم متن ساختگی با تولید سادگی',
+    desc: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است',
+  },
+  {
+    src: '/assets/images/videocover.png',
+    title: 'لورم ایپسوم متن ساختگی با تولید سادگی',
+    desc: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است',
+  },
+  {
+    src: '/assets/images/videocover.png',
+    title: 'لورم ایپسوم متن ساختگی با تولید سادگی',
+    desc: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است',
+  },
+  {
+    src: '/assets/images/videocover.png',
+    title: 'لورم ایپسوم متن ساختگی با تولید سادگی',
+    desc: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است',
+  },
+  {
+    src: '/assets/images/videocover.png',
+    title: 'لورم ایپسوم متن ساختگی با تولید سادگی',
+    desc: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است',
+  },
+  {
+    src: '/assets/images/videocover.png',
+    title: 'لورم ایپسوم متن ساختگی با تولید سادگی',
+    desc: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است',
+  },
+  {
+    src: '/assets/images/videocover.png',
+    title: 'لورم ایپسوم متن ساختگی با تولید سادگی',
+    desc: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است',
+  },
+  {
+    src: '/assets/images/videocover.png',
+    title: 'لورم ایپسوم متن ساختگی با تولید سادگی',
+    desc: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است',
+  },
+  {
+    src: '/assets/images/videocover.png',
+    title: 'لورم ایپسوم متن ساختگی با تولید سادگی',
+    desc: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است',
+  },
+];
 
 function Film() {
   return (
-    <div className='bg-secondary w-full min-h-screen overflow-hidden ' >
-       <div className='text-4xl text-[#E98074] mt-32 mr-10 '>
-       آخرین ویدیو ها       </div>      
-       <div className=" gap-20 flex m-10 justify-around ">
-      <MovieCard movie={movie} width={600} height={600} />
-      <MovieCard movie={movie} width={600} height={600} />
-      <MovieCard movie={movie} width={600} height={600} />
-    </div>
-    <div>
-    <div className='text-4xl text-[#E98074] mt-32 mr-10 mb-10'>
-       همه ی ویدیو ها       </div>
-        <div className='flex justify-around mb-10' >
-        <MovieCard movie={movie} width={500} height={500} />
-        <MovieCard movie={movie} width={500} height={500} />
-        <MovieCard movie={movie} width={500} height={500} />
-        <MovieCard movie={movie} width={500} height={500} />
-
+    <div className="bg-secondary flex items-start justify-center h-full pb-6 text-txt_primary pt-16">
+      <div className="w-[85%] h-full flex flex-col items-start justify-start gap-4 z-40">
+        <div className="w-full flex items-center justify-between gap-4">
+          <div className="flex flex-col items-start gap-2 ">
+            <span>فیلم</span>
+            <h1 className="text-2xl font-semibold">آخرین ویدئوها</h1>
+          </div>
         </div>
-        <div className='flex justify-around mb-10' >
-        <MovieCard movie={movie} width={500} height={500} />
-        <MovieCard movie={movie} width={500} height={500} />
-        <MovieCard movie={movie} width={500} height={500} />
-        <MovieCard movie={movie} width={500} height={500} />
 
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {movies.map((movie) => (
+            <MovieCard key={movie.title} movie={movie} />
+          ))}
         </div>
-        <div className='flex justify-around mb-10' >
-        <MovieCard movie={movie} width={500} height={500} />
-        <MovieCard movie={movie} width={500} height={500} />
-        <MovieCard movie={movie} width={500} height={500} />
-        <MovieCard movie={movie} width={500} height={500} />
-
-        </div>
-       
+      </div>
     </div>
-    </div>
-  )
+  );
 }
 
 export default Film

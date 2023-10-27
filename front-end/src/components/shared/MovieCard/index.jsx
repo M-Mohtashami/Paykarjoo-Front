@@ -5,8 +5,8 @@ import { CiPlay1 } from 'react-icons/ci';
 const MovieCard = ({ movie, width = 350, height = 370 }) => {
   return (
     <div
-      className="overflow-hidden max-w-xs flex flex-col gap-3 text-txt_primary cursor-pointer"
-      style={{ maxWidth: width, maxHeight: height }}
+      className="overflow-hidden max-w-xs basis-52 flex flex-col gap-3 text-txt_primary cursor-pointer"
+      style={{ minWidth: `${width}px`, maxHeight: `${height}px` }}
     >
       <div className="relative rounded-md overflow-hidden">
         <div>

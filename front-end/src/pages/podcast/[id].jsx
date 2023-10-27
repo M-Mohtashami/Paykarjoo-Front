@@ -106,6 +106,7 @@ function SinglePodcast({ audio }) {
                 //   style={{ width: '100%', height: '100%' }}
               />
               <div className="flex items-start flex-col gap-2">
+                <div className="text-primary"> {audio.title}</div>
                 <div className="text-primary w-full flex items-center justify-between ">
                   <div className="flex items-center gap-1">
                     <BsClock size={24} />
@@ -158,9 +159,10 @@ function SinglePodcast({ audio }) {
           <h3 className="text-lg font-semibold">شاید بپسندید</h3>
 
           <div className="flex items-center justify-center gap-5">
-            {audios.map((audio) => (
-              <AudioCard key={audio.title} audio={audio} />
-            ))}
+            {audios.map(
+              (audio, idx) =>
+                idx < 3 && <AudioCard key={audio.title} audio={audio} />
+            )}
           </div>
         </div>
       </div>

@@ -118,7 +118,7 @@ function SinglePodcast({ audio }) {
       barRadius: 5,
     });
     ws.load(
-      'https://www.mfiles.co.uk/mp3-downloads/brahms-st-anthony-chorale-theme-two-pianos.mp3'
+      'https://www.mfiles.co.uk/mp3-downloads/brahms-symphony3-3-theme-violin-piano.mp3'
     );
     setAudioDuration(ws.getDuration());
     setWavesurfer(ws);

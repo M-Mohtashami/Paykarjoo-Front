@@ -1,10 +1,15 @@
 import AudioCard from '@/components/shared/AudioCard';
-import React from 'react';
+import React, { useRef, useCallback, useState, useEffect } from 'react';
 import { CiPlay1, CiPause1 } from 'react-icons/ci';
 import { BsClock } from 'react-icons/bs';
 import AudioProgress from '@/utils/AudioProgress';
 import Image from 'next/image';
+import useAudioPlayer from '@/hooks/useAudio';
+import Button from '@/components/shared/Button';
+import WaveSurfer from 'wavesurfer.js';
+import dynamic from 'next/dynamic';
 
+// const WaveSurfer = dynamic(() => import('wavesurfer.js'));
 const audios = [
   {
     duration: '11:45',
@@ -85,6 +90,43 @@ const audios = [
 
 function SinglePodcast({ audio }) {
   audio = audios[0];
+  const waveformRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [audioDuration, setAudioDuration] = useState(0);
+  const [wavesurfer, setWavesurfer] = useState();
+  console.log(audioDuration);
+  // On play button click
+  const onPlayClick = () => {
+    if (isPlaying) {
+      wavesurfer.pause();
+    } else {
+      wavesurfer.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
+
+  // Initialize wavesurfer when the container mounts
+  // or any of the props change
+  useEffect(() => {
+    const ws = WaveSurfer.create({
+      container: waveformRef.current,
+      waveColor: '#8E8D8A',
+      progressColor: '#E98074',
+      height: 40,
+      barWidth: 2,
+      barGap: 2,
+      barRadius: 5,
+    });
+    ws.load(
+      'https://www.mfiles.co.uk/mp3-downloads/brahms-st-anthony-chorale-theme-two-pianos.mp3'
+    );
+    setAudioDuration(ws.getDuration());
+    setWavesurfer(ws);
+    return () => {
+      ws.destroy();
+    };
+  }, []);
+
   return (
     <div className="bg-secondary flex items-start justify-center h-full pb-6 text-txt_primary pt-16">
       <div className="w-[85%] h-full flex flex-col items-start justify-start gap-6 z-40">
@@ -95,7 +137,7 @@ function SinglePodcast({ audio }) {
           </div>
           <div
             style={{ maxWidth: `${1400}px`, maxHeight: '400px' }}
-            className={`max-w-sm max-h-56 p-2 border bg-secondary border-primary rounded-sm overflow-hidden flex flex-col gap-1 items-center justify-between cursor-pointer`}
+            className={`max-w-sm max-h-56 p-2 border bg-secondary border-primary rounded-sm overflow-hidden flex flex-col gap-1 items-center justify-between`}
           >
             <div className="w-full overflow-hidden relative rounded-sm space-y-2">
               <Image
@@ -110,7 +152,15 @@ function SinglePodcast({ audio }) {
                 <div className="text-primary w-full flex items-center justify-between ">
                   <div className="flex items-center gap-1">
                     <BsClock size={24} />
-                    <span>{audio.duration}</span>
+                    <span>
+                      {('0' + parseInt(wavesurfer?.getDuration() / 60)).slice(
+                        -2
+                      ) +
+                        ':' +
+                        ('0' + parseInt(wavesurfer?.getDuration() % 60)).slice(
+                          -2
+                        )}
+                    </span>
                   </div>
                   <div className="flex items-center gap-1">
                     <div>
@@ -137,21 +187,17 @@ function SinglePodcast({ audio }) {
             </div>
             <div className="flex justify-between w-full border border-primary rounded-sm">
               <div className="flex items-center justify-center relative w-full">
-                <div className="w-full flex justify-center overflow-hidden">
-                  <AudioProgress stroke="#908971" />
-                </div>
-                {/* <div className="w-full flex justify-center overflow-hidden absolute">
-            <AudioProgress stroke="#E98074" />
-          </div> */}
+                <div ref={waveformRef} className="w-full px-1" />
+                {/* <AudioProgress stroke="#908971" /> */}
+                {/* </div> */}
               </div>
-              <div
-                // onClick={() => setIsPlaying((prev) => !prev)}
-                // icon={isPlaying ? <CiPause1 size={24} /> : <CiPlay1 size={24} />}
-
+              <Button
+                onClick={onPlayClick}
+                icon={
+                  isPlaying ? <CiPause1 size={24} /> : <CiPlay1 size={24} />
+                }
                 className="flex justify-self-end self-end items-center justify-center w-16 h-full p-2 bg-txt_primary text-secondary"
-              >
-                <CiPlay1 size={24} />
-              </div>
+              />
             </div>
           </div>
         </div>

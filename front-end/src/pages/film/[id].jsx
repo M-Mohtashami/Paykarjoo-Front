@@ -62,7 +62,7 @@ function SingleFilm({ movie }) {
             <h1 className="text-2xl font-semibold">{movie.title}</h1>
             <div className="flex flex-col gap-3 text-txt_primary cursor-pointer">
               <div className="relative rounded-md overflow-hidden">
-                <div>
+                <div className="aspect-video overflow-hidden">
                   <Image
                     src={movie?.src}
                     width={1000}

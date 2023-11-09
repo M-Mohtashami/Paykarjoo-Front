@@ -52,36 +52,6 @@ const movies = [
 
 function SingleFilm({ movie }) {
   movie = movies[0];
-  // const waveMediaRef = useRef(null);
-  // const waveFormRef = useRef(null);
-  // const [isPlaying, setIsPlaying] = useState(false);
-  // const [audioDuration, setAudioDuration] = useState(0);
-  // const [wavesurfer, setWavesurfer] = useState();
-  // On play button click
-  // const onPlayClick = () => {
-  //   if (isPlaying) {
-  //     wavesurfer.pause();
-  //   } else {
-  //     wavesurfer.play();
-  //   }
-  //   setIsPlaying(!isPlaying);
-  // };
-
-  // Initialize wavesurfer when the container mounts
-  // or any of the props change
-  // useEffect(() => {
-  //   // const ws = WaveSurfer.create({
-  //   //   container: waveFormRef.current,
-  //   //   media: waveMediaRef.current,
-  //   // });
-  //   // ws.load('https://www.aparat.com/v/jfQp2');
-  //   // // setAudioDuration(ws.getDuration());
-  //   // setWavesurfer(ws);
-  //   // return () => {
-  //   //   ws.destroy();
-  //   // };
-  //   waveMediaRef.current?.src = 'https://www.aparat.com/v/jfQp2';
-  // }, []);
 
   return (
     <div className="bg-secondary flex items-start justify-center h-full pb-6 text-txt_primary pt-16">
@@ -93,12 +63,6 @@ function SingleFilm({ movie }) {
             <div className="flex flex-col gap-3 text-txt_primary">
               <div className="relative rounded-md overflow-hidden">
                 <div className="w-full">
-                  {/* <video
-                    src="https://www.aparat.com/v/jfQp2"
-                    ref={waveMediaRef}
-                    controls={true}
-                  />
-                  <div ref={waveFormRef}></div> */}
                   {/* Lazy load the YouTube player */}
                   <ReactPlayer
                     controls

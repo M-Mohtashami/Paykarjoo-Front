@@ -7,7 +7,6 @@ import Image from 'next/image';
 import useAudioPlayer from '@/hooks/useAudio';
 import Button from '@/components/shared/Button';
 import WaveSurfer from 'wavesurfer.js';
-import dynamic from 'next/dynamic';
 
 // const WaveSurfer = dynamic(() => import('wavesurfer.js'));
 const audios = [

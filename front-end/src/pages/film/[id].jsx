@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import MovieCard from '@/components/shared/MovieCard';
-import Image from 'next/image';
-import { CiPlay1 } from 'react-icons/ci';
+import ReactPlayer from 'react-player/lazy';
 
 const movies = [
   {
@@ -53,6 +52,37 @@ const movies = [
 
 function SingleFilm({ movie }) {
   movie = movies[0];
+  // const waveMediaRef = useRef(null);
+  // const waveFormRef = useRef(null);
+  // const [isPlaying, setIsPlaying] = useState(false);
+  // const [audioDuration, setAudioDuration] = useState(0);
+  // const [wavesurfer, setWavesurfer] = useState();
+  // On play button click
+  // const onPlayClick = () => {
+  //   if (isPlaying) {
+  //     wavesurfer.pause();
+  //   } else {
+  //     wavesurfer.play();
+  //   }
+  //   setIsPlaying(!isPlaying);
+  // };
+
+  // Initialize wavesurfer when the container mounts
+  // or any of the props change
+  // useEffect(() => {
+  //   // const ws = WaveSurfer.create({
+  //   //   container: waveFormRef.current,
+  //   //   media: waveMediaRef.current,
+  //   // });
+  //   // ws.load('https://www.aparat.com/v/jfQp2');
+  //   // // setAudioDuration(ws.getDuration());
+  //   // setWavesurfer(ws);
+  //   // return () => {
+  //   //   ws.destroy();
+  //   // };
+  //   waveMediaRef.current?.src = 'https://www.aparat.com/v/jfQp2';
+  // }, []);
+
   return (
     <div className="bg-secondary flex items-start justify-center h-full pb-6 text-txt_primary pt-16">
       <div className="w-[85%] h-full flex flex-col items-start justify-start gap-4 z-40">
@@ -60,14 +90,20 @@ function SingleFilm({ movie }) {
           <div className="flex flex-col items-start gap-2 ">
             <span>فیلم</span>
             <h1 className="text-2xl font-semibold">{movie.title}</h1>
-            <div className="flex flex-col gap-3 text-txt_primary cursor-pointer">
+            <div className="flex flex-col gap-3 text-txt_primary">
               <div className="relative rounded-md overflow-hidden">
-                <div className="aspect-video overflow-hidden">
-                  <Image
-                    src={movie?.src}
-                    width={1000}
-                    height={500}
-                    alt={movie?.title}
+                <div className="w-full">
+                  {/* <video
+                    src="https://www.aparat.com/v/jfQp2"
+                    ref={waveMediaRef}
+                    controls={true}
+                  />
+                  <div ref={waveFormRef}></div> */}
+                  {/* Lazy load the YouTube player */}
+                  <ReactPlayer
+                    controls
+                    url="https://www.youtube.com/watch?v=wWgIAphfn2U"
+                    height={400}
                   />
                 </div>
               </div>

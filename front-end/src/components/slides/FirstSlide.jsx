@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 import Button from './../shared/Button/index';
 
-const articles = [
+export const articles = [
   {
     id: 1,
     title: 'اقتصاد بر اقتصادناپذیر',
@@ -1033,7 +1033,7 @@ const FirstSlide = ({ handleNext, handlePrev }) => {
                 key={article.title}
                 title={article.title}
                 icon={article.icon}
-                className="flex items-center justify-start pr-10 flex-grow basis-60 gap-3 p-2 border border-primary rounded-full hover:text-secondary hover:bg-primary"
+                className="flex items-center justify-start pr-4 flex-grow basis-60 gap-3 p-2 border border-primary rounded-full hover:text-secondary hover:bg-primary"
               />
             ))}
           </div>

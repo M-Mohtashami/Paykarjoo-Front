@@ -13,7 +13,7 @@ import Gallery from '@/pages/gallery';
 import Movies from './Movies';
 import Audios from './Audios';
 
-const slides = [
+export const slides = [
   {
     title: 'اقتصاد بر اقتصاد ناپذیر',
     desc: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است.',
@@ -41,7 +41,7 @@ const slides = [
   },
 ];
 
-const movies = [
+export const movies = [
   {
     src: '/assets/images/videocover.png',
     title: 'لورم ایپسوم متن ساختگی با تولید سادگی',
@@ -59,7 +59,7 @@ const movies = [
   },
 ];
 
-const audios = [
+export const audios = [
   {
     duration: '11:45',
     image: '/assets/images/image8.png',

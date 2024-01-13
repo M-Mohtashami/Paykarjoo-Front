@@ -25,3 +25,11 @@ export default function Home() {
 Home.getLayout = function getLayout(page) {
   return <MainLayout>{page}</MainLayout>;
 };
+
+export const getServerSideProps = async () => {
+  return {
+    props: {
+      test: 'hello world',
+    },
+  };
+};

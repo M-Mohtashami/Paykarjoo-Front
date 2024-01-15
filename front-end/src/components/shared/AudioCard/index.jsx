@@ -14,18 +14,18 @@ const AudioCard = ({ audio, width = 500, height = 400 }) => {
     >
       <div className="w-full overflow-hidden relative rounded-sm space-y-2">
         <Image
-          src={audio.image}
+          src={audio?.image || '/assets/images/image8.png'}
           alt="alt"
           width={width}
           height={height}
           //   style={{ width: '100%', height: '100%' }}
         />
         <div className="flex items-start flex-col gap-2">
-          <div className="text-primary"> {audio.title}</div>
+          <div className="text-primary"> {audio?.title}</div>
           <div className="text-primary w-full flex items-center justify-between ">
             <div className="flex items-center gap-1">
               <BsClock size={24} />
-              <span>{audio.duration}</span>
+              <span>{audio?.duration}</span>
             </div>
             <div className="flex items-center gap-1">
               <div>

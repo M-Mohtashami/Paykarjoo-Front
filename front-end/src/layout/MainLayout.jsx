@@ -3,7 +3,7 @@ import Navbar from '@/components/Navbar';
 
 const MainLayout = ({ children }) => {
   const { props } = children;
-  console.log(props.test);
+
   return (
     <div className="bg-secondary">
       <div className="z-50">

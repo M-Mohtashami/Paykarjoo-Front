@@ -11,7 +11,7 @@ const MovieCard = ({ movie, width = 350, height = 370 }) => {
       <div className="relative rounded-md overflow-hidden">
         <div>
           <Image
-            src={movie?.src}
+            src={movie?.src || '/assets/images/videocover.png'}
             width={width}
             height={height}
             alt={movie?.title}
